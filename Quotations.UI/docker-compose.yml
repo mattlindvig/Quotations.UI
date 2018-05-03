@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  quotations.ui:
+    image: quotationsui
+    build:
+      context: .
+      dockerfile: Quotations.UI/Dockerfile
