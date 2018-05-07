@@ -16,6 +16,13 @@ namespace Quotations.UI.Controllers
             return View();
         }
 
+        public IActionResult ShowQuotes()
+        {
+            var a = new QuotesRepository();
+            
+            return View(a.GetQuoteAsync());
+        }
+
         [HttpPost]
         public void CreateQuote(Quote model)
         {
