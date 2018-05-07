@@ -12,19 +12,20 @@ namespace Quotations.UI.Controllers
     {
         public IActionResult CreateQuote()
         {
-            var a = new QuotesRepository();
-            var b = new Quote()
-            {
-                Author = new Author(),
-                Quotation = "test",
-                CreatedDateTime = DateTimeOffset.Now,
-                SourceInfo = "test",
-                Users = new User()
-            };
- 
-            var ab = a.CreateQuoteAsync(b);
-            
+
             return View();
         }
+
+        [HttpPost]
+        public void CreateQuote(Quote model)
+        {
+            var a = new QuotesRepository();
+            a.CreateQuoteAsync(model);
+            //return null;
+        }
+
+
+
+        
     }
 }
